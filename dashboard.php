@@ -5,7 +5,11 @@
     <hr size="1" />
     <h2>Template issues</h2>
     <p>Issues are submitted and tracked on <a href="https://github.com/CentralCollege/departments-wordpress-theme/issues">GitHub</a>. If you are a <a href="http://github.com">GitHub</a> user, you can submit new issues or pull requests at any time.</p>
-    
+	
+    <hr size="1" />
+    <h2>Plugin issues</h2>
+    <p>Issues are submitted and tracked on <a href="https://github.com/CentralCollege/C2AP-for-wordpress/issues">GitHub</a>. If you are a <a href="http://github.com">GitHub</a> user, you can submit new issues or pull requests at any time.</p>
+        
     <hr size="1" />
     <h2>Directory API</h2>
     <?php 
