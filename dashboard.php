@@ -3,16 +3,21 @@
     <!---<p>Oh I'm on camera? Guitar Solo!!!</p>
     <p><img src="http://i.imgur.com/2Jbvvj3.gif" alt="Guitar Solo!" style="border-radius: .5em;">!--->
     <hr size="1" />
-    <h2>Template issues</h2>
-    <p>Issues are submitted and tracked on <a href="https://github.com/CentralCollege/departments-wordpress-theme/issues">GitHub</a>. If you are a <a href="http://github.com">GitHub</a> user, you can submit new issues or pull requests at any time.</p>
-	
-    <hr size="1" />
-    <h2>Plugin issues</h2>
-    <p>Issues are submitted and tracked on <a href="https://github.com/CentralCollege/C2AP-for-wordpress/issues">GitHub</a>. If you are a <a href="http://github.com">GitHub</a> user, you can submit new issues or pull requests at any time.</p>
-        
+    <div class="leftInfo" style="float: left; width:49%; border-right: 1px solid #ccc;">
+        <h2>Template issues</h2>
+        <p>Issues with the departments WordPress them are submitted and tracked on <a href="https://github.com/CentralCollege/departments-wordpress-theme/issues">GitHub</a>. If you are a <a href="http://github.com">GitHub</a> user, you can submit new issues or pull requests at any time.</p>
+	</div>
+	<div class="rightInfo" style="float:right; width: 49%;">    
+        <h2>Plugin issues</h2>
+        <p>Issues are submitted and tracked on <a href="https://github.com/CentralCollege/C2AP-for-wordpress/issues">GitHub</a>. If you are a <a href="http://github.com">GitHub</a> user, you can submit new issues or pull requests at any time.</p>
+ 	</div>
+    <div class="clearBoth" style="clear: both;"></div>
     <hr size="1" />
     <h2>Directory API</h2>
     <?php 
+		//$nonce_check = check_admin_referer('nonceaction', 'cui-apicron');
+		//print_r($nonce_check);
+	
         if (isset($_POST['apiurl'])){
             update_option('apiurl',	$_POST['apiurl']);
             if (isset($_POST['apicron']) && $_POST['apicron'] == true){
@@ -26,6 +31,7 @@
         }
     ?>
     <form name="form1" method="post" action="">
+    	<?php wp_nonce_field('nonceaction', 'cui-apicron');?>
         <table class="form-table">
             <tbody>
                 <tr>
