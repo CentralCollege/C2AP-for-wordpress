@@ -1,0 +1,35 @@
+body{
+  background-color: #990000;
+}
+.login h1{
+  background-color: #fff;
+  border-radius: .33em;
+}
+.login h1 a{
+  background-image: url('//d1lqhpmxg10s5j.cloudfront.net/images/2015/centralCollegeLogo.svg');
+  background-size: 130px 100%;
+  width: 150px;
+}
+form, .message{
+  border-radius: .33em;
+}
+.wp-core-ui .button-primary{
+  background-color: #cb2026;
+  border-color: #990000;
+  text-shadow: none;
+  box-shadow: 0 1px #990000;
+}
+.wp-core-ui .button-primary:hover{
+  background-color: #fff;
+  color: #990000;
+  border: 1px solid #990000;
+}
+input[type=checkbox]:checked:before{
+  color: #990000;
+}
+.login #backtoblog a, .login #nav a{
+  color: #fff;
+}
+.login #backtoblog a:hover, .login #nav a:hover{
+  color: #ccc;
+}

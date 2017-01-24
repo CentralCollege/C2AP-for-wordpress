@@ -73,6 +73,13 @@ function cui_load_homepage_admin_styles(){
 }
 add_action('admin_enqueue_scripts', 'cui_load_homepage_admin_styles');
 
+// -----------------------------------------------------------------------
+// Change login screen
+// -----------------------------------------------------------------------
+function cui_login_styles(){
+  wp_enqueue_style('central-login-style', plugin_dir_url( __FILE__ ) . 'css/login.css', array(), '0.0.1');
+}
+add_action( 'login_enqueue_scripts', 'cui_login_styles', 10);
 
 
 ?>
