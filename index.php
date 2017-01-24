@@ -60,10 +60,10 @@ add_action('admin_head', 'cui_remove_admin_color_scheme');
 // -----------------------------------------------------------------------
 // Set session timeout to 60 minutes
 // -----------------------------------------------------------------------
-function cui_cookie_expiration($expiration){
+/*function cui_cookie_expiration($expiration){
 	return 3600;
 }
-add_filter('auth_cookie_expiration', 'cui_central_cookie_expiration');
+add_filter('auth_cookie_expiration', 'cui_central_cookie_expiration');*/
 
 // -----------------------------------------------------------------------
 // Add styles to WordPress admin
@@ -81,5 +81,13 @@ function cui_login_styles(){
 }
 add_action( 'login_enqueue_scripts', 'cui_login_styles', 10);
 
-
+// -----------------------------------------------------------------------
+// Add a notice for local developers at login
+// -----------------------------------------------------------------------
+if($_SERVER['HTTP_HOST'] == '192.168.56.111'){
+  function cui_login_text(){
+    echo '<p class="message">This site is running locally at 192.168.56.111!</p>';
+  }
+  add_filter('login_message','cui_login_text');
+}
 ?>
