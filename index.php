@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: C2AP for WordPress
-Plugin URI: https://github.com/jacoboyen/expanded-wp-profiles
+Plugin URI: https://github.com/CentralCollege/C2AP-for-wordpress
 Description: Core functionality for Central College WordPress installs.
 Version: 2.0.0
 Author: Jacob Oyen (@jacoboyen)
@@ -48,17 +48,31 @@ function cui_save_expanded_profile_fields($user_id){
 add_action( 'personal_options_update', 'cui_save_expanded_profile_fields' );
 add_action( 'edit_user_profile_update', 'cui_save_expanded_profile_fields' );
 
-//Remove admin color schemes
+// -----------------------------------------------------------------------
+// Remove admin color schemes option
+// -----------------------------------------------------------------------
 function cui_remove_admin_color_scheme(){
 	global $_wp_admin_css_colors;
 	$_wp_admin_css_colors = 0;
 }
 add_action('admin_head', 'cui_remove_admin_color_scheme');
 
-//Set session timeout to 60 minutes
+// -----------------------------------------------------------------------
+// Set session timeout to 60 minutes
+// -----------------------------------------------------------------------
 function cui_cookie_expiration($expiration){
 	return 3600;
 }
 add_filter('auth_cookie_expiration', 'cui_central_cookie_expiration');
+
+// -----------------------------------------------------------------------
+// Add styles to WordPress admin
+// -----------------------------------------------------------------------
+function cui_load_homepage_admin_styles(){
+	wp_enqueue_style('central-style', plugin_dir_url( __FILE__ ) . 'css/admin.css', array(), '0.0.1');
+}
+add_action('admin_enqueue_scripts', 'cui_load_homepage_admin_styles');
+
+
 
 ?>
